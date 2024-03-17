@@ -183,7 +183,7 @@ class Parser:
 
     
         
-    def factor(selfs):
+    def factor(self):
         tok = self.current_tok
         
         if tok.type in (TT_INT, TT_FLOAT):
