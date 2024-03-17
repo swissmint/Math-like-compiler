@@ -173,7 +173,7 @@ class Paser:
 
     def parse(self):
         res = self.expr()
-        return
+        return res
 
     def advance(self):
         self.tok_idx += 1
@@ -181,7 +181,7 @@ class Paser:
             self.current_tok = self.tokens[self.tok_idx]
             return self.current_tok
         
-    def factor(self):
+    def factor(selfs):
         tok = self.current_tok
         
         if tok.type in (TT_INT, TT_FLOAT):
@@ -208,6 +208,7 @@ class Paser:
 ###########################
 #RUN
 ###########################		
+    
 def run(fn, text):
     lexer = Lexer(fn, text)
     tokens, error = lexer.make_tokens()
@@ -225,7 +226,7 @@ def run(fn, text):
     
     
 
-    return ast , error
+    return ast , error, tokens
  
  
 
