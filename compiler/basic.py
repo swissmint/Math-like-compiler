@@ -171,11 +171,14 @@ class Paser:
         self.tok_idx = 1 
         self.advance()
 
-    def advance(self,):
+    def advance(self, ):
         self.tok_idx += 1
+
         if self.tok_idx  < len(self.tokens):
-            self.current_tok = self.tokens[self.tok_idx]
-        return self.current_tok
+
+            current_tok = self.tokens[self.tok_idx]
+
+        return current_tok
         
     def parse(self):
         res = self.expr()
