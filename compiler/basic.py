@@ -18,7 +18,7 @@ class Error:
     
 class IllegalCharError(Error):
     def __init__(self, pos_start, pos_end, details):
-        super().__init__(pos_start, pos_end, "Illegal Charater Error", details)
+        return super().__init__(pos_start, pos_end, "Illegal Character Error", details)
 
         
 ###########################
@@ -166,10 +166,11 @@ class BinOpNode:
 ###########################	 
 
 class Parser:
-    def __init__(self, tokens):
+    def __init__(self, tokens, current_tok=0):
         self.tokens = tokens
         self.tok_idx = -1
         self.advance()
+        self.current_tok = Token(current_tok)
 
     def advance(self, ):
         self.tok_idx += 1
@@ -179,10 +180,10 @@ class Parser:
           
     def parse(self):
         res = self.expr()
+        print(res)
+        print("res")
         return res
 
-    
-        
     def factor(self):
         tok = self.current_tok
         
@@ -228,7 +229,7 @@ def run(fn, text):
     
     
 
-    return ast , error, tokens
+    return ast, error
  
  
 
